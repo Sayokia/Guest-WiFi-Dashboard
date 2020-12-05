@@ -3,8 +3,8 @@
 
 ***
 
-###CSCI 3172 Fall 2020
-###Group Project 
+### CSCI 3172 Fall 2020
+### Group Project 
 ##### Members:
 [1] Yanlin Zhu, B00812966,
 
@@ -52,7 +52,7 @@ businesses to build faster and more stable wireless networks.
 </p>
 
 ***
-###About Our Project
+### About Our Project
 Guest Wi-Fi Management System is a Platform as a Service, which combines with
 multi-vendor hardware to provide customers with public service network service capability.
 This system can both provide vertical customers (merchants) with cloud-based online
@@ -72,11 +72,11 @@ business value based on wireless networks.
 
 ***
 
-###Light Use Case
+### Light Use Case
 
 <p align="center"><img src="./GWMS/ReadMeAssets/flowChart.png" alt="Flow Chart"/> </p>
 
-#####For a Vertical Customers (Merchants):
+##### For a Vertical Customers (Merchants):
 As shown in the figure, the first part is the user account and service packages check
 module. When the merchants complete the registration in the system, they can sign in to the
 merchant dashboard. The system will inquire the database to know whether the current user
@@ -101,7 +101,7 @@ also delete and upload pictures on Wi-Fi authentication pages to help merchants 
 promote their products. All information changes can be previewed through Portal page
 management, and templates can be switched through the Portal page management function.
 
-#####For a Horizontal Customers (Merchants' Customers):
+##### For a Horizontal Customers (Merchants' Customers):
 When a horizontal customer (the merchant's customer) arrives at the merchant's store to
 consume and use the network, it will first turn on the device's Wi-Fi Settings, select and
 connect to the merchant's public wireless network. After connecting to the network, with
@@ -115,7 +115,7 @@ receives the request and forwards it to the device. Then the user will be redire
 success page, so that can browse the Internet normally.
 
 ***
-###Security Strategy
+### Security Strategy
 Because our system needs to store, transmit, and process both vertical user (merchant)
 and horizontal customer (merchant's customer) data, data security is a significant design and
 implementation challenges. To address security challenges, we need to develop strategies for
