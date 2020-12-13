@@ -18,6 +18,12 @@
                                 Dashboard
                             </jet-nav-link>
                         </div>
+
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <jet-nav-link :href="route('test')" :active="route().current('test')">
+                                Test
+                            </jet-nav-link>
+                        </div>
                     </div>
 
                     <!-- Settings Dropdown -->
@@ -123,6 +129,12 @@
                     </jet-responsive-nav-link>
                 </div>
 
+                <div class="pt-2 pb-3 space-y-1">
+                    <jet-responsive-nav-link :href="route('test')" :active="route().current('test')">
+                        Test
+                    </jet-responsive-nav-link>
+                </div>
+
                 <!-- Responsive Settings Options -->
                 <div class="pt-4 pb-1 border-t border-gray-200">
                     <div class="flex items-center px-4">
@@ -189,15 +201,16 @@
                         </template>
                     </div>
                 </div>
+
             </div>
         </nav>
 
         <!-- Page Heading -->
-        <header class="bg-white shadow">
+        <!-- <header class="bg-white shadow">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 <slot name="header"></slot>
             </div>
-        </header>
+        </header> -->
 
         <!-- Page Content -->
         <main>
