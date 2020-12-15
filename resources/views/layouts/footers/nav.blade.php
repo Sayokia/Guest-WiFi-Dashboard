@@ -9,6 +9,9 @@
             <li class="nav-item">
                 <a href="https://git.cs.dal.ca/yanlinz/csci3172-groupproject-m3" class="nav-link" target="_blank">Project Git</a>
             </li>
+            <li class="nav-item">
+                <a href="https://github.com/creativetimofficial/argon-dashboard-laravel" class="nav-link" target="_blank">Frontend preset powered by <b>Agron</b> </a>
+            </li>
 
         </ul>
     </div>
