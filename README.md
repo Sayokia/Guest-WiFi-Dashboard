@@ -47,7 +47,7 @@ business value based on wireless networks.
 
 ### Light Use Case
 
-<p align="center"><img src="./GWMS/ReadMeAssets/flowChart.png" alt="Flow Chart"/> </p>
+<p align="center"><img src="./ReadMeAssets/flowChart.png" alt="Flow Chart"/> </p>
 
 ##### For a Vertical Customers (Merchants):
 As shown in the figure, the first part is the user account and service packages check
