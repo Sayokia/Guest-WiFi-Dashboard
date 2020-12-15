@@ -16,14 +16,14 @@ class CreateStoresTable extends Migration
         Schema::create('stores', function (Blueprint $table) {
             $table->id('sid');
             $table->string('name',256);
-            $table->string('address',256);
+            $table->string('address',1024);
             $table->string('logo')->nullable();
-            $table->boolean('wifi',true);
-            $table->boolean('ad',false);
-            $table->integer('info_id');
-            $table->integer('sec_id');
-            $table->integer('img_id');
-            $table->integer('plan_id');
+            $table->boolean('wifi')->default(true);
+            $table->boolean('ad')->default(false);
+            $table->integer('info_id')->nullable();
+            $table->integer('sec_id')->nullable();
+            $table->integer('img_id')->nullable();
+            $table->integer('plan_id')->nullable();
         });
     }
 

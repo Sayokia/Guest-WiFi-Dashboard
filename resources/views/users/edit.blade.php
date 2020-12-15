@@ -1,20 +1,17 @@
-@extends('layouts.app', ['title' => __('User Profile')])
-
+@extends('layouts.admin', ['title' => __('User Profile')])
+@foreach($user as $info)
 @section('content')
     @include('users.partials.header', [
-        'title' => __('Hello,') . ' '. auth()->user()->name,
-        'description' => __('You can manage your account and edit account information there')
-
+        'title' => __('Edit User') . ': '. $info->name
     ])
 
     <div class="container-fluid mt--7">
         <div class="row">
-
             <div class="col-xl-12 order-xl-1">
                 <div class="card bg-secondary shadow">
                     <div class="card-header bg-white border-0">
                         <div class="row align-items-center">
-                            <h3 class="mb-0">{{ __('Edit Profile') }}</h3>
+                            <h3 class="mb-0">{{ __('Edit User Information') }}</h3>
                         </div>
                     </div>
                     <div class="card-body">
@@ -37,7 +34,7 @@
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-name">{{ __('Name') }}</label>
-                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ old('name', auth()->user()->name) }}" required autofocus>
+                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ old('name', $info->name) }}" required autofocus>
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -47,7 +44,7 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-email">{{ __('Email') }}</label>
-                                    <input type="email" name="email" id="input-email" class="form-control form-control-alternative{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" value="{{ old('email', auth()->user()->email) }}" required>
+                                    <input type="email" name="email" id="input-email" class="form-control form-control-alternative{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" value="{{ old('email', $info->email) }}" required>
 
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
@@ -57,11 +54,24 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('phone') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-phone">{{ __('Phone') }}</label>
-                                    <input type="phone" name="phone" id="input-phone" class="form-control form-control-alternative{{ $errors->has('phone') ? ' is-invalid' : '' }}" placeholder="{{ __('Phone') }}" value="{{ old('phone', auth()->user()->phone) }}" required>
+                                    <input type="phone" name="phone" id="input-phone" class="form-control form-control-alternative{{ $errors->has('phone') ? ' is-invalid' : '' }}" placeholder="{{ __('Phone') }}" value="{{ old('phone', $info->phone) }}" required>
 
                                     @if ($errors->has('phone'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('phone') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                                <div class="form-group{{ $errors->has('admin') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-admin">{{ __('Permission') }}</label>
+                                    <select name="admin" id="input-admin"  class="form-control form-control-alternative{{ $errors->has('admin') ? ' is-invalid' : '' }}">
+                                        <option value="{{ old('admin', $info->admin) }}">Current: {{$info->admin?"Administrator":"Merchants"}}</option>
+                                        <option value="1">Administrator</option>
+                                        <option value="0">Merchants</option>
+                                    </select>
+                                    @if ($errors->has('admin'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('admin') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -126,3 +136,4 @@
         @include('layouts.footers.auth')
     </div>
 @endsection
+@endforeach

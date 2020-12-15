@@ -1,9 +1,8 @@
-@extends('layouts.app', ['title' => __('User Management')])
+@extends('layouts.admin', ['title' => __('User Management')])
 
 @section('content')
     @include('users.partials.header', [
-        'title' => __('User Management'),
-        'class' => 'col-lg-7'
+        'title' => __('User Management')
     ])
 
 
@@ -31,28 +30,34 @@
                         <tr>
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Creation Date</th>
-                            <th scope="col"></th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Register Date</th>
+                            <th scope="col">Operation</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>Admin Admin</td>
+                        @foreach ($users as $user)
+                            <tr>
+                            <td>{{$user->name}}</td>
                             <td>
-                                <a href="mailto:admin@argon.com">admin@argon.com</a>
+                                <a href="mailto:{{$user->email}}">{{$user->email}}</a>
                             </td>
-                            <td>12/02/2020 11:00</td>
+                                <td>{{$user->phone}}</td>
+                                <td>{{$user->admin ? "Administrator" :"Merchant"}}</td>
+                                <td>{{$user->created_at}}</td>
                             <td class="text-right">
                                 <div class="dropdown">
                                     <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-v">Edit</i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                        <a class="dropdown-item" href="">Edit</a>
+                                        <a class="dropdown-item" href="{{ route('users.edit',$user->id)}}">Edit</a>
                                     </div>
                                 </div>
                             </td>
                         </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
