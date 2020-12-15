@@ -8,48 +8,21 @@
 ##### Members:
 [1] Yanlin Zhu, B00812966,
 
-Skills: 
-<p>
-Java, C, Python, HTML, CSS, JavaScript, PHP, MySQL, Android Studio, Vue,
-React, Node.js, Laravel, Git, Agile development
-</p>
-Experience:
-<p>
-
-1. Participated in the team project of Vue+Laravel+Mysql to design a student
-survey management website for Dalhousie University School of Health and
-Human Performance. The website can automatically generate downloadable
-reports by uploading, storing and analyzing student surveys. Participated in
-database design, mainly responsible for front-end interface development, login
-registration and front-end authentication control.
-
-2. Developed bill tracking app based on Jetpack MVVM architecture with Kotlin
-to implement bill history tracking, automatic chart and report generation
-function
-</p>
 [2] Xinhai Cheng, B00812966
 
-Skills:
-<p>
-Linux, Network, CISCO, MySQL, Oracle, Ansible, Openstack, VMware, Java,
-PHP, Laravel, HTML, CSS, JavaScript, Git</p>
-Experience:
-<p>
+*** 
+### Instruction
 
-1. Participated in the construction project of PaaS cloud platform of China
-Telecom, completed the interaction of hardware and system configuration.
-Through using Ansible as the batch management platform, I completed the
-cluster deployment of hundreds of servers. Based on Redhat Enterprise Linux
-and OpenStack, this platform provides convenient, real-time delivery of public
-cloud computing services to millions of people and enterprise users.
+***
+### M3 Development Log
 
-2. Participated in the development of cloud-based wireless network hardware
-products, and realized cloud takeover of all devices through TR069 protocol,
-configuration delivery and health check. This hardware product can help small
-and medium enterprises quickly develop and manage the network anytime and
-anywhere. It has now helped dozens of Small and medium-sized Halifax local
-businesses to build faster and more stable wireless networks.
-</p>
+We made some changes to our previous design as we encountered many problems during the development.
+
+1. Change of UI Design from horizontal to vertical to make it more compatible with mobile device
+
+2. Deprecated the idea of using latest leased Jetstream Pack of Laravel 8
+
+3. Switch from Vue-Element-Admin to Argon as we decided to drop Vue due to time limitation
 
 ***
 ### About Our Project
