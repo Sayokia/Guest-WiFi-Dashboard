@@ -25,5 +25,18 @@ class UsersTableSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+
+        DB::table('users')->insert([
+            'sid' => 2,
+            'name' => 'Yanlin Zhu',
+            'email' => 'zyl@dal.ca',
+            'phone' => '9024109631',
+            'email_verified_at' => now(),
+            'password' => Hash::make('123456'),
+            'admin' => true,
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        
     }
 }
