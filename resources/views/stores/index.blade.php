@@ -93,11 +93,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="card-footer py-4">
-                    <span class="d-flex justify-content-end" >
-                        * This information is for your service reference only and will not be displayed to your customers
-                    </span>
-                </div>
+
             </div>
         </div>
     </div>

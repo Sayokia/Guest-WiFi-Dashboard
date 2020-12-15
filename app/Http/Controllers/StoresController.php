@@ -30,13 +30,11 @@ class StoresController extends Controller
     public function management(User $model)
     {
         $userStoreID = Auth::user()->sid;
-        $userStoreInfoID = DB::table("stores")
-            ->where('sid','=',$userStoreID)
-            ->select('info_id')->get();
-
         $userStoreInfoData = DB::table("stores_info")
-            ->where('info_id','=',$userStoreInfoID)
-            ->get();
+            ->join('stores','stores_info.info_id','=','stores.info_id')
+            ->where('sid','=',$userStoreID)
+            ->get()
+            ->toArray();
 
         return view('stores.management', ['store'=> $userStoreInfoData] );
     }
