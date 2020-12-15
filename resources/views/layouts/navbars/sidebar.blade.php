@@ -68,6 +68,19 @@
                     </a>
                 </li>
 
+            
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        <i class="ni ni-chart-bar-32 text-primary"></i> {{ __('Data Analysis') }}
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        <i class="ni ni-bulb-61 text-primary"></i> {{ __('Carousel Mnagement') }}
+                    </a>
+                </li>
+
                 <li class="nav-item">
                     <a class="nav-link " href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                         <i class="fas fa-store-alt text-primary"></i>
@@ -88,6 +101,12 @@
                             </li>
                         </ul>
                     </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('home') }}">
+                        <i class="fas fa-wifi text-primary"></i> {{ __('WiFi Config') }}
+                    </a>
                 </li>
 
 
