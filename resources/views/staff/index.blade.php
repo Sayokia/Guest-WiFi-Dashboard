@@ -38,8 +38,7 @@
                 </div>
 
                 <div class="card body">
-                    <h3 class="mx-4">Content</h3>
-                    
+                    <h3 class="mx-4">Content</h3>                                     
                     <p class="mx-4"> {!! $post->content !!}</p>
                     </h3>
                 </div>

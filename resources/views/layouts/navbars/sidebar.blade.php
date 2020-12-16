@@ -12,6 +12,7 @@
         <ul class="nav align-items-center d-md-none">
             <li class="nav-item dropdown">
                 <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    
                     <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->name }}</span>
 
                 </a>
