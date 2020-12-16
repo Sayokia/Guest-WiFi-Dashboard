@@ -104,8 +104,8 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
-                        <i class="fas fa-wifi text-primary"></i> {{ __('WiFi Config') }}
+                    <a class="nav-link" href="{{ route('wifi') }}">
+                        <i class="fas fa-wifi text-primary"></i> {{ __('WiFi Configuration') }}
                     </a>
                 </li>
 

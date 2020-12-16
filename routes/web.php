@@ -33,6 +33,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('stores/management', ['as' => 'stores.management', 'uses' => 'App\Http\Controllers\StoresController@management']);
     Route::post('stores/management', ['as' => 'stores.management.update', 'uses' => 'App\Http\Controllers\StoresController@update']);
 
+    Route::get('wifi', 'App\Http\Controllers\WifiController@index')->name('wifi');
+    Route::post('wifi', ['as' => 'wifi.update', 'uses' => 'App\Http\Controllers\WifiController@update']);
+
+
 });
 
 Route::group(['middleware' => 'auth'], function () {
