@@ -22,7 +22,9 @@ class StoresController extends Controller
         $userStoreData = DB::table("stores")
             ->join('users_plan','stores.plan_id','=','users_plan.plan_id')
             ->where('sid','=',$userStoreID)
-            ->select('stores.name AS storename','address','logo','ad','users_plan.name AS planname','desc','max_device','max_ad','max_ad_time')->get();
+            ->select('stores.name AS storename','address','logo','ad','users_plan.name AS planname','desc','max_device','max_ad','max_ad_time')
+            ->get()
+            ->toArray();
 
         return view('stores.index', ['store'=> $userStoreData]);
     }

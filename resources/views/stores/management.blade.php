@@ -96,11 +96,11 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="text-center mb-2">
+                                <button type="submit" class="btn btn-primary mt-4">{{ __('Update') }}</button>
+                            </div>
                         @endforeach
-                        <div class="text-center mb-2">
-                            <button type="submit" class="btn btn-primary mt-4">{{ __('Update') }}</button>
-                        </div>
+
                     </form>
                 </div>
 
