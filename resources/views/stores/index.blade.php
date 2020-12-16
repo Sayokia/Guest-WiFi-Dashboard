@@ -13,7 +13,14 @@
                 <div class="card-header border-0">
                     <div class="row align-items-center">
                         <div class="col-8">
-                            <h3 class="mb-0">Store Information</h3>
+                            <h3 class="mb-0">
+                                @if(empty($store))
+                                    You don't have any valid service subscription
+                                @else
+                                    Store Service Information
+                                @endif
+
+                            </h3>
                         </div>
 
                     </div>
@@ -21,6 +28,7 @@
 
                 <div class="col-12">
                 </div>
+                @foreach ($store as $info)
 
                 <div class="table-responsive">
                     <table class="table align-items-center table-flush">
@@ -34,7 +42,6 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach ($store as $info)
                             <tr>
                             <td>{{$info->storename}}</td>
                                 <td>{{$info->address}}</td>
@@ -97,6 +104,8 @@
             </div>
         </div>
     </div>
+
+
 
     @include('layouts.footers.auth')
 </div>

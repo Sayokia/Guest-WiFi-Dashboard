@@ -76,6 +76,17 @@
                                     @endif
                                 </div>
 
+                                <div class="form-group{{ $errors->has('sid') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-phone">{{ __('Bind Store ID') }}</label>
+                                    <input type="text" name="sid" id="input-sid" class="form-control form-control-alternative{{ $errors->has('sid') ? ' is-invalid' : '' }}" placeholder="{{ __('User bound Store ID') }}" value="{{ old('sid', $info->sid) }}" required>
+
+                                    @if ($errors->has('sid'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('sid') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
                                 </div>

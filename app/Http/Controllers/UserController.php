@@ -25,7 +25,7 @@ class UserController extends Controller
 
     public function edit($uid){
         $userData = DB::table("users")
-            ->select('id','name','email','phone','admin','created_at')
+            ->select('id','sid','name','email','phone','admin','created_at')
             ->where('id','=',$uid)
             ->get();
         return view('users.edit', ['user'=> $userData]);
