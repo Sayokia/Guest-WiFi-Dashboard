@@ -70,14 +70,14 @@
 
             
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
+                    <a class="nav-link" href="{{ route('analysis') }}">
                         <i class="ni ni-chart-bar-32 text-primary"></i> {{ __('Data Analysis') }}
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
-                        <i class="ni ni-bulb-61 text-primary"></i> {{ __('Carousel Mnagement') }}
+                        <i class="ni ni-bulb-61 text-primary"></i> {{ __('Carousel Management') }}
                     </a>
                 </li>
 

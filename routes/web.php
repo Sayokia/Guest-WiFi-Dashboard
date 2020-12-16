@@ -37,7 +37,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('staff', 'App\Http\Controllers\AdminHomeController@index')->name('staff');
     Route::resource('staff/users', 'App\Http\Controllers\UserController', ['except' => ['show']]);
     Route::get('staff/users', 'App\Http\Controllers\UserController@index')->name('staff/users');
+});
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('analysis', 'App\Http\Controllers\AnalysisController@index')->name('analysis');
+});
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('post', 'App\Http\Controllers\PostController@create')->name('post');
+    Route::post('post/post', ['as' => 'post.post.store', 'uses' => 'App\Http\Controllers\PostController@store']);
 });
 

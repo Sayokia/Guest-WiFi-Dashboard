@@ -69,6 +69,12 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('post') }}">
+                        <i class="ni ni-notification-70 text-primary"></i> {{ __('New Announcement') }}
+                    </a>
+                </li>
+
 
             </ul>
             @if (auth()->user()->admin == 1)
