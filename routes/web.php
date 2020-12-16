@@ -25,12 +25,14 @@ Auth::routes();
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
-	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
-	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
+    Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
+    Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
+    Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 
     Route::get('stores', ['as' => 'stores.index', 'uses' => 'App\Http\Controllers\StoresController@index']);
     Route::get('stores/management', ['as' => 'stores.management', 'uses' => 'App\Http\Controllers\StoresController@management']);
+    Route::post('stores/management', ['as' => 'stores.management.update', 'uses' => 'App\Http\Controllers\StoresController@update']);
+
 });
 
 Route::group(['middleware' => 'auth'], function () {
