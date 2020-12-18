@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
+
 
 class UserController extends Controller
 {
@@ -29,6 +28,23 @@ class UserController extends Controller
             ->where('id','=',$uid)
             ->get();
         return view('users.edit', ['user'=> $userData]);
+    }
+
+
+    public function update(\Illuminate\Http\Request $request)
+    {
+
+        $email = $request->email;
+        $name = $request->name;
+        $phone =$request->phone;
+        $admin = $request->admin;
+        $sid = $request->sid;
+
+        DB::table('users')
+            ->where('email', $email)
+            ->update(['name' => $name,'phone' => $phone,'admin' => $admin,'sid' => $sid,'email' => $email]);
+
+        return back()->withStatus(__('User Profile successfully updated.'));
     }
 
 

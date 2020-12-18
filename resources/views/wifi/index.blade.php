@@ -14,10 +14,10 @@
                         <div class="row align-items-center">
                             <div class="col-8">
                                 <h3 class="mb-0">
-                                    @if(empty($wifi))
-                                        You don't have any valid service subscription
-                                    @else
+                                    @if($wifi === 0 || $wifi === 1)
                                         Wi-Fi Status Switch
+                                    @else
+                                        You don't have any valid service subscription
                                     @endif
                                 </h3>
                             </div>
@@ -25,7 +25,7 @@
                         </div>
                     </div>
 
-                    @if(!empty($wifi))
+                    @if($wifi === 0 || $wifi === 1)
                     <form method="POST" action="{{route('wifi.update')}}" autocomplete="off">
                         @csrf
                         @if (session('status'))
