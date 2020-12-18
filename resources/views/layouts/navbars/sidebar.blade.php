@@ -12,6 +12,7 @@
         <ul class="nav align-items-center d-md-none">
             <li class="nav-item dropdown">
                 <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    
                     <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->name }}</span>
 
                 </a>
@@ -70,14 +71,14 @@
 
             
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
+                    <a class="nav-link" href="{{ route('analysis') }}">
                         <i class="ni ni-chart-bar-32 text-primary"></i> {{ __('Data Analysis') }}
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
-                        <i class="ni ni-bulb-61 text-primary"></i> {{ __('Carousel Mnagement') }}
+                        <i class="ni ni-bulb-61 text-primary"></i> {{ __('Carousel Management') }}
                     </a>
                 </li>
 

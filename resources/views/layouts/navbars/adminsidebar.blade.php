@@ -13,9 +13,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="media align-items-center">
-                        <span class="avatar avatar-sm rounded-circle">
-                        <<img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-1-800x800.jpg">>
-                        </span>
+                        <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->name }}</span>
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
@@ -66,6 +64,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('staff/users') }}">
                         <i class="ni ni-single-02 text-primary"></i> {{ __('Users Management') }}
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('post') }}">
+                        <i class="ni ni-notification-70 text-primary"></i> {{ __('New Announcement') }}
                     </a>
                 </li>
 
