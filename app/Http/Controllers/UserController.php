@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 
 class UserController extends Controller
@@ -31,7 +33,7 @@ class UserController extends Controller
     }
 
 
-    public function update(\Illuminate\Http\Request $request)
+    public function update(Request $request)
     {
 
         $email = $request->email;
@@ -45,6 +47,28 @@ class UserController extends Controller
             ->update(['name' => $name,'phone' => $phone,'admin' => $admin,'sid' => $sid,'email' => $email]);
 
         return back()->withStatus(__('User Profile successfully updated.'));
+    }
+
+    public function password(Request $request)
+    {
+        $email = $request->user;
+        $newPass = $request->password;
+        $comfirmPass = $request->password_confirmation;
+
+        if ($newPass != $comfirmPass){
+            return back()->withErrors(['password' => __('Confirm password is not same as new password, please check')]);
+        }else{
+
+            $newPass = Hash::make($newPass);
+
+            DB::table('users')
+                ->where('email', $email)
+                ->update(['password' => $newPass]);
+            echo "true";
+
+            return back()->withPasswordStatus(__('User Password successfully updated.'));
+        }
+
     }
 
 

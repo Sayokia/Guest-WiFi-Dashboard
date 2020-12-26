@@ -93,9 +93,8 @@
                             </div>
                         </form>
                         <hr class="my-4" />
-                        <form method="post" action="{{ route('profile.password') }}" autocomplete="off">
+                        <form method="post" action="{{ route('users.password') }}" autocomplete="off">
                             @csrf
-                            @method('put')
 
                             <h6 class="heading-small text-muted mb-4">{{ __('Password') }}</h6>
 
@@ -109,16 +108,8 @@
                             @endif
 
                             <div class="pl-lg-4">
-                                <div class="form-group{{ $errors->has('old_password') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-current-password">{{ __('Current Password') }}</label>
-                                    <input type="password" name="old_password" id="input-current-password" class="form-control form-control-alternative{{ $errors->has('old_password') ? ' is-invalid' : '' }}" placeholder="{{ __('Current Password') }}" value="" required>
+                                <input type="user" name="user" id="user-email" class="form-control " placeholder="{{ __('Email') }}" value="{{ $info->email }}" required hidden>
 
-                                    @if ($errors->has('old_password'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('old_password') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
                                 <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-password">{{ __('New Password') }}</label>
                                     <input type="password" name="password" id="input-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('New Password') }}" value="" required>

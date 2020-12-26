@@ -43,6 +43,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('staff', 'App\Http\Controllers\AdminHomeController@index')->name('staff');
     Route::resource('staff/users', 'App\Http\Controllers\UserController', ['except' => ['show']]);
     Route::put('staff/users', ['as' => 'users.update', 'uses' => 'App\Http\Controllers\UserController@update']);
+    Route::post('staff/users/password', ['as' => 'users.password', 'uses' => 'App\Http\Controllers\UserController@password']);
     Route::get('staff/users', 'App\Http\Controllers\UserController@index')->name('staff/users');
 });
 
