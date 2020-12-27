@@ -52,6 +52,12 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
+    Route::get('slide', 'App\Http\Controllers\SlideController@index')->name('slide');
+    
+    Route::post('slide', ['as' => 'slide.store', 'uses' => 'App\Http\Controllers\SlideController@store']);
+});
+
+Route::group(['middleware' => 'auth'], function () {
     Route::get('post', 'App\Http\Controllers\PostController@create')->name('post');
     Route::post('post/post', ['as' => 'post.post.store', 'uses' => 'App\Http\Controllers\PostController@store']);
 });
