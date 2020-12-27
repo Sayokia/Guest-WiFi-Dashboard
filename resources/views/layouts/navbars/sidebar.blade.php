@@ -77,7 +77,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}">
+                    <a class="nav-link" href="{{ route('slide') }}">
                         <i class="ni ni-bulb-61 text-primary"></i> {{ __('Carousel Management') }}
                     </a>
                 </li>
