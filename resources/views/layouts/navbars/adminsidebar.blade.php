@@ -68,6 +68,13 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('staff/stores') }}">
+                        <i class="ni ni-bag-17 text-primary"></i> {{ __('Stores Management') }}
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('post') }}">
                         <i class="ni ni-notification-70 text-primary"></i> {{ __('New Announcement') }}
                     </a>

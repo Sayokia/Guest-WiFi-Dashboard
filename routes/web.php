@@ -45,6 +45,9 @@ Route::group(['middleware' => 'auth','prefix' => 'staff'], function () {
     Route::put('users', ['as' => 'users.update', 'uses' => 'App\Http\Controllers\UserController@update']);
     Route::post('users/password', ['as' => 'users.password', 'uses' => 'App\Http\Controllers\UserController@password']);
     Route::get('users', 'App\Http\Controllers\UserController@index')->name('staff/users');
+    Route::resource('stores', 'App\Http\Controllers\StaffStoresController', ['except' => ['show']]);
+    Route::get('stores', 'App\Http\Controllers\StaffStoresController@index')->name('staff/stores');
+
 });
 
 Route::group(['middleware' => 'auth'], function () {
