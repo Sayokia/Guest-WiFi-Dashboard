@@ -101,11 +101,21 @@ class SlideController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Slide  $slide
+     * @param \Illuminate\Http\Request
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Slide $slide)
+    public function destroy(Request $request)
     {
         //
+        $id = $request->slide_id;
+        $url = $request->delete_img;
+        $path = public_path() . '/' . $url;
+@unlink($path);
+
+        $slide = DB::table("slides")
+        ->where('id','=',$id)
+        ->delete();
+        
+        return redirect()->back();
     }
 }

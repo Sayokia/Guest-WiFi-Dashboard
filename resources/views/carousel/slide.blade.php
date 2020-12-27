@@ -27,14 +27,29 @@
 
                                 @endif
                             <div id="carouselExampleControls" class="carousel carousel-dark slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+                                    <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+                                </ol>
                                 <div class="carousel-inner">
                                     @foreach (App\Models\Slide::all()->sortByDesc('updated_at') as $slide)
                                         @if ($slide->sid == auth()->user()->sid)
-                                                <div class="carousel-item  @if ($loop->first) active @endif"
-                                                     >
+                                                <div class="carousel-item text-center @if ($loop->first) active @endif"  >
                                                     <img src="{{ $slide->img }}" class="d-block w-100" alt="slides">
+                                                    <form action="{{ route('slide.destroy') }}" method="post">
+                                                        
+                                                        @csrf
+                                                        @method('delete')
+                                                        <input type="text" hidden value="{{ $slide->id }}" name="slide_id" id="slide_id">
+                                                        <input type="text" hidden value="{{ $slide->img }}" name="delete_img" id="delete_img">
+                                                        <button type="submit" style="margin:10px" class="btn btn-xs btn-danger" onclick="return confirm('Are you sure you want to delete this slider?')">Delete</button>
+                                                    </form>
+                                                    
 
                                                 </div>
+
+                                                
                                         @endif
 
                                     @endforeach
