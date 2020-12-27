@@ -20,59 +20,44 @@
                         </div>
 
                         <div class="card-body">
+                            @if($slides_count < 1)
+                                <div class="text-center">
+                                    <h3> You have not uploaded any pictures yet, please select and upload your pictures below.</h3>
+                                </div>
 
+                                @endif
+                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    @foreach (App\Models\Slide::all()->sortByDesc('updated_at') as $slide)
+                                        @if ($slide->sid = auth()->user()->sid)
+                                                <div class="carousel-item  @if ($loop->first) active @endif"
+                                                     >
+                                                    <img src="{{ $slide->img }}" class="d-block w-100" alt="slides">
 
+                                                </div>
+                                        @endif
 
+                                    @endforeach
 
-
-                            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                                <ol class="carousel-indicators">
-                                    <li data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"></li>
-                                    <li data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></li>
-                                    <li data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></li>
-                                </ol>
-                                @foreach (App\Models\Slide::all()->sortByDesc('updated_at') as $slide)
-                                    @if ($slide->sid = auth()->user()->sid)
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item  @if ($loop->first) active @endif"
-                                            @if ($loop->first)
-                                            data-bs-interval="10000" @endif
-                                            @if ($loop -> iteration == 2)
-                                            data-bs-interval="2000" @endif >
-                                    <img src={{ $slide->img }} class="d-block w-100" alt="slides">
-
+                                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
                             </div>
-                        </div>
-                        @endif
-
-                        @if ($loop ->last)
-                        @if ($loop -> count <3 )
-                            <div class="carousel-inner">
-                                            <div class="carousel-item">
-                                    <img src= "../../../public/argon/img/brand/blue.png"class="d-block w-100" alt="slides">
-
-                            </div>
-                            </div>
-                        @endif
-                        @endif
-                            
-                        
 
 
 
-                        @endforeach
-                        <a  class="carousel-control-prev" href=" #carouselExampleDark" role="button" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </a>
-                        <a  class="carousel-control-next" href="#carouselExampleDark" role="button" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </a>
-                    </div>
+
 
                     @if ($slides_count < 3)
-                    <div class="text-center">
+                                    <div class="jumbotron jumbotron-fluid">
+                                        <div class="container text-center">
+
+
                     <form action="{{ route('slide.store') }}" method="POST" accept-charset="UTF-8"
                         enctype="multipart/form-data">
                         @csrf
@@ -84,8 +69,9 @@
 
                     @else 
                     <h3 >You have reached maximum slide limit! Only 3 slides are allowed!</h3>
-                    </div>
-                    @endif
+                                        </div>
+                                    </div>
+                                @endif
                 </div>
             </div>
         </div>
