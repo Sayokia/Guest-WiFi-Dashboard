@@ -26,10 +26,10 @@
                                 </div>
 
                                 @endif
-                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                            <div id="carouselExampleControls" class="carousel carousel-dark slide" data-ride="carousel">
                                 <div class="carousel-inner">
                                     @foreach (App\Models\Slide::all()->sortByDesc('updated_at') as $slide)
-                                        @if ($slide->sid = auth()->user()->sid)
+                                        @if ($slide->sid == auth()->user()->sid)
                                                 <div class="carousel-item  @if ($loop->first) active @endif"
                                                      >
                                                     <img src="{{ $slide->img }}" class="d-block w-100" alt="slides">
