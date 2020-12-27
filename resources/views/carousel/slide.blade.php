@@ -52,7 +52,7 @@
                                     <img src= "../../../public/argon/img/brand/blue.png"class="d-block w-100" alt="slides">
 
                             </div>
-                        </div>
+                            </div>
                         @endif
                         @endif
                             
@@ -71,6 +71,7 @@
                         </a>
                     </div>
 
+                    @if ($slides_count < 3)
                     <div class="text-center">
                     <form action="{{ route('slide.store') }}" method="POST" accept-charset="UTF-8"
                         enctype="multipart/form-data">
@@ -80,12 +81,16 @@
                         <button class="btn btn-primary" type="submit">upload</button>
 
                     </form>
+
+                    @else 
+                    <h3 >You have reached maximum slide limit! Only 3 slides are allowed!</h3>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
         </div>
-        </div>
+        
 
         
 

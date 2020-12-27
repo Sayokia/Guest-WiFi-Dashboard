@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Slide;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class SlideController extends Controller
@@ -15,10 +16,16 @@ class SlideController extends Controller
      */
     public function index()
     {
+        $userStoreID = Auth::user()->sid;
+        $slide = DB::table("slides")
+        ->where('sid','=',$userStoreID)
+        ->count();
+
+        $count = $slide;
 
 
         
-        return view('carousel/slide');
+        return view('carousel/slide',['slides_count'=> $count]);
     }
 
     /**
