@@ -20,5 +20,12 @@ class StoresTableSeeder extends Seeder
             'info_id' => 1,
             'plan_id' => 1
         ]);
+
+        DB::table('stores')->insert([
+            'name' => 'Demo Store2 For Test',
+            'address' => 'Virtual Address',
+            'info_id' => 2,
+            'plan_id' => 1
+        ]);
     }
 }

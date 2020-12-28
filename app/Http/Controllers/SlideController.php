@@ -53,7 +53,7 @@ class SlideController extends Controller
             return back()->withErrors(__('You mush select a picture'));
         }
         $sid = $request->sid;
-        $folder_name = "uploads/images/carousel/" . $sid;
+        $folder_name = "/uploads/images/carousel/" . $sid;
         $upload_path = public_path() . '/' . $folder_name;
         $extension  =  strtolower($file->getClientOriginalExtension())  ?:  'png';
         $filename = $sid . '_' . time() . '.' . $extension;
