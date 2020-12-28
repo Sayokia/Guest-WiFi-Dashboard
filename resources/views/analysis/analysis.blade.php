@@ -10,6 +10,16 @@
             <div class="col-xl-8 mb-5 mb-xl-0">
                 <div class="card bg-gradient-default shadow">
                     <div class="card-header bg-transparent">
+
+                        @if(empty(auth()->user()->sid))
+                                    <h2 style="color: white"><strong>You don't have any valid service subscription</strong></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                        @else
                         <div class="row align-items-center">
                             <div class="col">
                                 <h6 class="text-uppercase text-light ls-1 mb-1">Overview</h6>
@@ -280,6 +290,8 @@
                 </div>
             </div>
         </div>
+
+        @endif
 
         @include('layouts.footers.auth')
     </div>
