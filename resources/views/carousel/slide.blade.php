@@ -11,6 +11,17 @@
             <div class="row">
                 <div class="col">
                     <div class="card shadow">
+                        @if(empty(auth()->user()->sid))
+                        <div class="card-header border-0">
+                            <div class="row align-items-center">
+                                    <h2 ><strong>You don't have any valid service subscription</strong></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                                    @else
                         <div class="card-header border-0">
                             <div class="row align-items-center">
                                 <div class="col-8">
@@ -113,7 +124,7 @@
 
         
 
-
+        @endif
         @include('layouts.footers.auth')
         </div>
     @endsection
