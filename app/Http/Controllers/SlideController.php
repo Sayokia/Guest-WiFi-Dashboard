@@ -49,6 +49,9 @@ class SlideController extends Controller
     {
         // solution referred to https://learnku.com/laravel/t/35579
         $file = $request->img;
+        if (empty($file)){
+            return back()->withErrors(__('You mush select a picture'));
+        }
         $sid = $request->sid;
         $folder_name = "uploads/images/carousel/" . $sid;
         $upload_path = public_path() . '/' . $folder_name;

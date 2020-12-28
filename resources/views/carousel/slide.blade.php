@@ -15,20 +15,7 @@
                             <div class="row align-items-center">
                                 <div class="col-8">
                                     <h3 class="mb-0">Slides Preview</h3>
-                                    @if ($errors->any())
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>
-                                                    {{ $error }}
-                                                </li>
-                                            @endforeach
-                                            
-                                        </ul>
-                                    </div>
 
-                                        
-                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -85,7 +72,20 @@
                     @if ($slides_count < 3)
                                     <div class="jumbotron jumbotron-fluid">
                                         <div class="container text-center">
+                                            @if ($errors->any())
+                                                <div class="alert alert-danger">
+                                                    <ul>
+                                                        @foreach ($errors->all() as $error)
+                                                            <li>
+                                                                {{ $error }}
+                                                            </li>
+                                                        @endforeach
 
+                                                    </ul>
+                                                </div>
+
+
+                                            @endif
 
                     <form action="{{ route('slide.store') }}" method="POST" accept-charset="UTF-8"
                         enctype="multipart/form-data">
