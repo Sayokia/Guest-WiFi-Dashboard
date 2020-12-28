@@ -39,12 +39,15 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('staff', 'App\Http\Controllers\AdminHomeController@index')->name('staff');
-    Route::resource('staff/users', 'App\Http\Controllers\UserController', ['except' => ['show']]);
-    Route::put('staff/users', ['as' => 'users.update', 'uses' => 'App\Http\Controllers\UserController@update']);
-    Route::post('staff/users/password', ['as' => 'users.password', 'uses' => 'App\Http\Controllers\UserController@password']);
-    Route::get('staff/users', 'App\Http\Controllers\UserController@index')->name('staff/users');
+Route::group(['middleware' => 'auth','prefix' => 'staff'], function () {
+    Route::get('/', 'App\Http\Controllers\AdminHomeController@index')->name('staff');
+    Route::resource('users', 'App\Http\Controllers\UserController', ['except' => ['show']]);
+    Route::put('users', ['as' => 'users.update', 'uses' => 'App\Http\Controllers\UserController@update']);
+    Route::post('users/password', ['as' => 'users.password', 'uses' => 'App\Http\Controllers\UserController@password']);
+    Route::get('users', 'App\Http\Controllers\UserController@index')->name('staff/users');
+    Route::resource('stores', 'App\Http\Controllers\StaffStoresController', ['except' => ['show']]);
+    Route::get('stores', 'App\Http\Controllers\StaffStoresController@index')->name('staff/stores');
+
 });
 
 Route::group(['middleware' => 'auth'], function () {
