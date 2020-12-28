@@ -61,6 +61,39 @@ We made some changes to our previous design as we encountered many problems duri
 
 ***
 
+***
+
+### M4/5 Development Log
+
+1. Improve UI by changing the layout or adding new component
+2. Finish features after M3
+3. Add security validation for forms and uploads
+ 
+***
+
+### Featuress
+
+- [x] Merchant can login/register to the web
+- [x] Merchant can see their store data 
+- [x] Merchant can see charts of their store data
+- [x] Merchant can upload picture as carousel on their WiFi portal
+- [x] Merchant can mange the carousels
+- [x] Merchant can view the service this system provided them
+- [x] Merchant can change their store name shown in the portal in different languages 
+- [x] Merchant can manage their WiFi status (switch on/off)
+- [x] Merchant can change their profile
+- [x] Admin can post announcement to all merchants
+- [x] Admin can see the user list
+- [x] Admin can change user info
+- [x] Admin can help merchants reset their password
+- [x] Admin can see the store list
+- [x] Admin can assign new registered user to a store by changing their sid
+- [x] Merchant's customer can see the WiFi authentication portal
+- [x] Merchant's customer can connect to WiFi through authentication portal
+- [ ] Merchant data is updated instantly
+- [ ] Merchant can post annoucement in different languages in the portal       
+
+
 ### About Our Project
 
 Guest Wi-Fi Management System is a Platform as a Service, which combines with
