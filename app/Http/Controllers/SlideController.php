@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Slide;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\SlideRequest;
 use Illuminate\Http\Request;
 
 class SlideController extends Controller
@@ -44,7 +45,7 @@ class SlideController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SlideRequest $request)
     {
         // solution referred to https://learnku.com/laravel/t/35579
         $file = $request->img;
