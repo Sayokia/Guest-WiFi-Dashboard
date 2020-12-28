@@ -24,7 +24,7 @@ class WifiController extends Controller
             ->pluck('wifi')
             ->toArray();
 
-        $storeWiFiStatus = $userStoreData[0];
+        $storeWiFiStatus = $userStoreData[0]??"";
 
         return view('wifi.index', ['wifi'=> $storeWiFiStatus]);
     }
