@@ -43,7 +43,7 @@
                                                         @method('delete')
                                                         <input type="text" hidden value="{{ $slide->id }}" name="slide_id" id="slide_id">
                                                         <input type="text" hidden value="{{ $slide->img }}" name="delete_img" id="delete_img">
-                                                        <button type="submit" style="margin:10px" class="btn btn-xs btn-danger" onclick="return confirm('Are you sure you want to delete this slider?')">Delete</button>
+                                                        <button type="submit" style="margin:18px" class="btn btn-xs btn-danger" onclick="return confirm('Are you sure you want to delete this slider?')">Delete</button>
                                                     </form>
                                                     
 
@@ -81,8 +81,12 @@
                         <button class="btn btn-primary" type="submit">upload</button>
 
                     </form>
+                    </div>
+                                    </div>
 
                     @else 
+                    <div class="jumbotron jumbotron-fluid">
+                                        <div class="container text-center">
                     <h3 >You have reached maximum slide limit! Only 3 slides are allowed!</h3>
                                         </div>
                                     </div>
