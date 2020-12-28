@@ -49,7 +49,7 @@
                                         <i class="fas fa-ellipsis-v">Edit</i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                        <a class="dropdown-item" href="{{ route('users.edit',$store->sid)}}">Edit</a>
+                                        <a class="dropdown-item" href="{{ route('stores.edit',$store->sid)}}">Edit</a>
                                     </div>
                                 </div>
                             </td>
