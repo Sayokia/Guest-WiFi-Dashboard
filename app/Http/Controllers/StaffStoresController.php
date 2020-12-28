@@ -27,27 +27,12 @@ class StaffStoresController extends Controller
     }
 
     public function edit($sid){
-        $userData = DB::table("stores")
+        $storeData = DB::table("stores")
             ->where('sid','=',$sid)
             ->get();
-        return view('staff.stores.edit', ['user'=> $userData]);
+        return view('staff.stores.edit', ['store'=> $storeData]);
     }
 
-    /**
-     * @param User $model
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
-     */
-    public function management(User $model)
-    {
-        $userStoreID = Auth::user()->sid;
-        $userStoreInfoData = DB::table("stores_info")
-            ->join('stores','stores_info.info_id','=','stores.info_id')
-            ->where('sid','=',$userStoreID)
-            ->get()
-            ->toArray();
-
-        return view('stores.management', ['store'=> $userStoreInfoData] );
-    }
 
     /**
      * @param Request $request
@@ -56,23 +41,16 @@ class StaffStoresController extends Controller
 
     public function update(Request $request)
     {
-        $name_en = $request->input('nm-en') ;
-        $name_zh = $request->input('nm-zh') ;
-        $name_fr = $request->input('nm-fr') ;
-        $name_jp = $request->input('nm-jp') ;
-        $name_kr = $request->input('nm-kr') ;
+        $sid = $request->input('sid') ;
+        $name = $request->input('name') ;
+        $address = $request->input('address') ;
+        $logo = $request->input('logo') ;
+        $wifi = $request->input('wifi') ;
+        $ad = $request->input('ad') ;
 
-        $userStoreID = Auth::user()->sid;
-        $userStoreInfoData = DB::table("stores")
-            ->where('sid','=',$userStoreID)
-            ->pluck('info_id')
-            ->toArray();
-
-        $userStoreInfoID = $userStoreInfoData[0];
-
-        $update = DB::table('stores_info')
-            ->where('info_id', $userStoreInfoID)
-            ->update(['name_en' => $name_en,'name_zh' => $name_zh,'name_fr' => $name_fr,'name_jp' => $name_jp,'name_kr' => $name_kr]);
+        DB::table('stores')
+            ->where('sid', $sid)
+            ->update(['name' => $name,'address' => $address,'logo' => $logo,'wifi' => $wifi,'ad' => $ad]);
 
         return back()->withStatus(__('Store information successfully updated.'));
     }
