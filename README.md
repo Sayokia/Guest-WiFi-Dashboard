@@ -65,9 +65,23 @@ We made some changes to our previous design as we encountered many problems duri
 
 ### M4/5 Development Log
 
-1. Improve UI by changing the layout or adding new component
-2. Finish features after M3
-3. Add security validation for forms and uploads
+1. Fix dashboard store management UI
+2. Improve UI accessibility
+3. Update Dashboard: new store management UI and controller, improve user experience
+4. Improve UI design and add Store ID management ability for admin
+5. Add new function: Wi-Fi Switch
+6. Add form validation for create announcement
+7. Fix Security/Function issue: a. Admin can not change user b. Fix wifi switch bug
+8. Bug fix: Administrator cannot change users' password
+9. Add limitation on maximum slides allowed
+10. UI improvement: fix the slider display bugs
+11. Change the color of carousel management to dark for better UI experience
+12. Bug Fix: fix the bug for no store binding user
+13. Security improve: add slide request validation
+14. Security improve: add validation for subscription
+15. Function improvement: Store Information Management
+16. Function improvement: Portal page improvement
+
  
 ***
 
@@ -113,6 +127,74 @@ business by customizing the wireless network authentication page. All these func
 help merchants maximize the utilization of wireless network resources and implement the
 business value based on wireless networks.
 
+***
+
+### Proejct Demo
+
+#### Portal Preview
+For a mobile user:
+<p align="center"><img  src = "ReadMeAssets/mobile_portal.png"  />
+</p>
+For a desktop or tablet user:
+<p align="center"><img  src = "ReadMeAssets/desktop_portal.png"  /></p>
+
+#### Wi-Fi Management System
+
+Homepage
+<p align="center"><img  src = "ReadMeAssets/home.png"  />
+</p>
+
+Login
+<p align="center"><img  src = "ReadMeAssets/login.png"  />
+</p>
+
+Register
+<p align="center"><img  src = "ReadMeAssets/reg.png"  />
+</p>
+
+Dashboard User
+<p align="center"><img  src = "ReadMeAssets/dashboard_user.png"  />
+</p>
+
+Dashboard Admin
+<p align="center"><img  src = "ReadMeAssets/dashboard_admin.png"  />
+</p>
+
+Profile
+<p align="center"><img  src = "ReadMeAssets/profile.png"  />
+</p>
+
+Data Analysis
+<p align="center"><img  src = "ReadMeAssets/data_analysis.png"  />
+</p>
+
+Carousel Management
+<p align="center"><img  src = "ReadMeAssets/slider_management.png"  />
+</p>
+
+Store Information
+<p align="center"><img  src = "ReadMeAssets/store_information.png"  />
+</p>
+
+Modification on Store Information
+<p align="center"><img  src = "ReadMeAssets/store_information_modification.png"  />
+</p>
+
+Admin Dashboard
+<p align="center"><img  src = "ReadMeAssets/staff_dashboard.png"  />
+</p>
+
+User Management
+<p align="center"><img  src = "ReadMeAssets/user_management.png"  />
+</p>
+
+Store Management 
+<p align="center"><img  src = "ReadMeAssets/store_management.png"  />
+</p>
+
+New Announcement
+<p align="center"><img  src = "ReadMeAssets/new_announcement.png"  />
+</p>
 ***
 
 ### Light Use Case
